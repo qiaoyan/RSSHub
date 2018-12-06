@@ -9,13 +9,22 @@ module.exports = async (ctx) => {
 
     const { board, topwords, descs } = response.data.result;
     const items = topwords.map((item, index) => {
-        const desc = descs[index].content.data[0];
+        const title = item.keyword;
+        const content = descs[index].content;
+        const desc = content
+            ? content.data[0]
+            : {
+                  originlink: `https://www.baidu.com/s?ie=utf-8&wd=${encodeURIComponent(title)}`,
+                  title,
+                  description: title,
+                  pubDate: Date.now(),
+              };
 
         return {
-            title: item.keyword,
+            title,
             description: `
         <a href="${desc.originlink}">${desc.title}</a><br>
-        ${desc.description}
+        ${desc.description || ''}
       `,
             link: desc.originlink,
             pubDate: new Date(desc.pubDate).toUTCString(),
