@@ -76,7 +76,7 @@ router.get('/list', (ctx) => {
             {"urlpath":"/mafengwo/note/latest","title":"马蜂窝/游记"},
             {"urlpath":"/solidot/www","title":"Solidot"},
             {"urlpath":"/chouti","title":"抽屉新热榜"},
-            {"urlpath":"/blogread/newest","title":"技术头条"},
+            // {"urlpath":"/blogread/newest","title":"技术头条"},
             {"urlpath":"/gnn/gnn","title":"GNN新聞網"},
             {"urlpath":"/a9vg/a9vg","title":"A9VG电玩部落"},
             {"urlpath":"/itjuzi/invest","title":"IT桔子/投融资事件"},
